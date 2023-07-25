@@ -23,7 +23,10 @@ while True:
 
 # ....... utilisation de la socket
 data_recv = s.recv(MAX_DATA_SIZE)
-print(data_recv.decode())
+if data_recv:
+    print(data_recv.decode())
+else:
+    print("Acune data")
 
 
 s.close()

@@ -20,4 +20,8 @@ print(f"Attente de connexion sur {HOST_IP}, port {HOST_PORT}...")
 connection_socket, client_address = s.accept()
 print(f"Connexion établie avec {client_address}")
 
+txt_send = "Hello"
+connection_socket.sendall(txt_send.encode())
+
 s.close()
+connection_socket.close()

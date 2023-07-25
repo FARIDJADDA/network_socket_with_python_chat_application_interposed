@@ -2,6 +2,7 @@
 import socket
 import time
 
+# LOCALHOST : 127.0.0.1
 HOST_IP = "127.0.0.1"
 HOST_PORT = 32000
 MAX_DATA_SIZE = 1024    
@@ -24,13 +25,13 @@ while True:
 # ....... utilisation de la socket
 
 while True:
-    
     data_recv = s.recv(MAX_DATA_SIZE)
     if not data_recv:
         break
     print(f"Message: {data_recv.decode()}")
     txt_send = input("Vous: ")
     s.sendall(txt_send.encode())
-
-
+    
+# .......
+    
 s.close()

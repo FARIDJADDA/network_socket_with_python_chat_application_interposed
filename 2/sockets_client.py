@@ -22,11 +22,15 @@ while True:
     break
 
 # ....... utilisation de la socket
-data_recv = s.recv(MAX_DATA_SIZE)
-if data_recv:
-    print(data_recv.decode())
-else:
-    print("Acune data")
+
+while True:
+    
+    data_recv = s.recv(MAX_DATA_SIZE)
+    if not data_recv:
+        break
+    print(f"Message: {data_recv.decode()}")
+    txt_send = input("Vous: ")
+    s.sendall(txt_send.encode())
 
 
 s.close()

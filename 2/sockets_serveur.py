@@ -12,6 +12,7 @@ HOST_IP = "127.0.0.1"
 HOST_PORT = 32000
 
 s = socket.socket()
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((HOST_IP, HOST_PORT))
 s.listen()
 
